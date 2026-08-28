@@ -281,7 +281,7 @@ function Home() {
       </section>
 
       {/* Services */}
-      <section id="services" className="border-y border-rule bg-secondary/60">
+      <section id="services" className="scroll-mt-20 border-y border-rule bg-secondary/60">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
@@ -322,7 +322,7 @@ function Home() {
       </section>
 
       {/* Expertise */}
-      <section id="expertise" className="bg-ink text-ink-foreground">
+      <section id="expertise" className="scroll-mt-20 bg-ink text-ink-foreground">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
           <p className="eyebrow text-gold">The expertise behind every engagement</p>
           <h2 className="mt-5 max-w-3xl text-4xl leading-tight lg:text-5xl">
@@ -358,7 +358,7 @@ function Home() {
       </section>
 
       {/* Testimonials */}
-      <section id="clients" className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
+      <section id="clients" className="scroll-mt-20 mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
         <p className="eyebrow text-muted-foreground">Hear from our clients</p>
         <div className="mt-12 grid gap-10 lg:grid-cols-3">
           {testimonials.map((t) => (
@@ -411,7 +411,7 @@ function Home() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
+      <section id="faq" className="scroll-mt-20 mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
         <div className="grid gap-14 lg:grid-cols-[0.7fr_1.3fr]">
           <div>
             <p className="eyebrow text-muted-foreground">FAQ</p>
