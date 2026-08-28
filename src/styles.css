@@ -62,21 +62,29 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 0.25rem;
+  --background: oklch(0.985 0.006 90);
+  --foreground: oklch(0.21 0.035 258);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.21 0.035 258);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.21 0.035 258);
+  --primary: oklch(0.24 0.045 260);
+  --primary-foreground: oklch(0.97 0.012 90);
+  --secondary: oklch(0.95 0.012 90);
+  --secondary-foreground: oklch(0.24 0.045 260);
+  --muted: oklch(0.945 0.01 88);
+  --muted-foreground: oklch(0.5 0.02 258);
+  --accent: oklch(0.72 0.115 82);
+  --accent-foreground: oklch(0.19 0.04 260);
+  --ink: oklch(0.17 0.035 260);
+  --ink-soft: oklch(0.24 0.04 260);
+  --ink-foreground: oklch(0.95 0.012 88);
+  --gold: oklch(0.76 0.12 84);
+  --gold-soft: oklch(0.86 0.07 88);
+  --rule: oklch(0.87 0.015 88);
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-body: "Work Sans", system-ui, sans-serif;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.929 0.013 255.508);
