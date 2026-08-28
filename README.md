@@ -1,14 +1,18 @@
-# Welcome to your Lovable project
+# DivorceLogic Redesign
+
+Hey Love! I want you redesign the homepage for me. I am giving you the url analyze and make the best version of it and use the same content and everything but just redesign in modern way. The niche is related to divorce and I want to pitch the new design to my client by comparing with its old one. So just design the homepage for it. Thanks
+
+Site url: https://www.divorcelogicllc.com/
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/ade99f3e-fe02-45fe-a810-d8dbfeb7be1e).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +24,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
