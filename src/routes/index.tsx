@@ -246,14 +246,14 @@ function Home() {
 
       {/* Who we are */}
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
-        <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <p className="eyebrow text-muted-foreground">Who we are</p>
-            <h2 className="mt-5 text-4xl leading-tight lg:text-5xl">
-              We work beside your attorney, not around them.
-            </h2>
-          </div>
+        <div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div className="space-y-6 text-base leading-relaxed text-muted-foreground">
+            <div>
+              <p className="eyebrow text-muted-foreground">Who we are</p>
+              <h2 className="mt-5 text-4xl leading-tight text-foreground lg:text-5xl">
+                We work beside your attorney, not around them.
+              </h2>
+            </div>
             <p>
               At Divorce Logic, we are a team of divorce financial analysts and forensic accounting
               specialists who work alongside your family law attorney or mediator to provide the
@@ -276,6 +276,22 @@ function Home() {
                 </li>
               ))}
             </ul>
+          </div>
+          <div className="relative lg:sticky lg:top-24">
+            <div className="absolute -inset-3 rounded-sm border border-gold/40" aria-hidden="true" />
+            <div className="relative aspect-video w-full overflow-hidden rounded-sm bg-ink">
+              <iframe
+                src="https://www.youtube.com/embed/-60dAXvgwlc"
+                title="Divorce Logic introduction video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+                className="absolute inset-0 h-full w-full"
+              />
+            </div>
+            <p className="mt-6 text-xs tracking-[0.14em] text-muted-foreground uppercase">
+              Meet the team behind the numbers
+            </p>
           </div>
         </div>
       </section>
@@ -324,36 +340,52 @@ function Home() {
       {/* Expertise */}
       <section id="expertise" className="scroll-mt-20 bg-ink text-ink-foreground">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
-          <p className="eyebrow text-gold">The expertise behind every engagement</p>
-          <h2 className="mt-5 max-w-3xl text-4xl leading-tight lg:text-5xl">
-            Credentials that hold up when the numbers are challenged
-          </h2>
-          <p className="mt-6 max-w-3xl leading-relaxed text-ink-foreground/70">
-            Divorce Logic's team holds designations spanning divorce financial planning, forensic
-            accounting, wealth management, business valuation, and QDRO analysis. From
-            straightforward financial reviews to the most complex cases, we have the credentials and
-            experience to support you.
-          </p>
+          <div className="grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-20">
+            <div>
+              <p className="eyebrow text-gold">The expertise behind every engagement</p>
+              <h2 className="mt-5 text-4xl leading-tight lg:text-5xl">
+                Credentials that hold up when the numbers are challenged
+              </h2>
+              <p className="mt-6 leading-relaxed text-ink-foreground/70">
+                Divorce Logic's team holds designations spanning divorce financial planning,
+                forensic accounting, wealth management, business valuation, and QDRO analysis. From
+                straightforward financial reviews to the most complex cases, we have the credentials
+                and experience to support you.
+              </p>
 
-          <ul className="mt-10 flex flex-wrap gap-3">
-            {designations.map((d) => (
-              <li
-                key={d}
-                className="rounded-sm border border-ink-foreground/20 px-4 py-2 text-sm text-ink-foreground/85"
-              >
-                {d}
-              </li>
-            ))}
-          </ul>
+              <ul className="mt-10 flex flex-wrap gap-3">
+                {designations.map((d) => (
+                  <li
+                    key={d}
+                    className="rounded-sm border border-ink-foreground/20 px-4 py-2 text-sm text-ink-foreground/85"
+                  >
+                    {d}
+                  </li>
+                ))}
+              </ul>
 
-          <dl className="mt-16 grid gap-10 border-t border-ink-foreground/15 pt-12 sm:grid-cols-3">
-            {stats.map((s) => (
-              <div key={s.label}>
-                <dt className="font-display text-6xl text-gold-soft lg:text-7xl">{s.value}</dt>
-                <dd className="mt-3 text-sm text-ink-foreground/60">{s.label}</dd>
-              </div>
-            ))}
-          </dl>
+              <dl className="mt-14 grid gap-8 border-t border-ink-foreground/15 pt-10 sm:grid-cols-3">
+                {stats.map((s) => (
+                  <div key={s.label}>
+                    <dt className="font-display text-5xl text-gold-soft lg:text-6xl">{s.value}</dt>
+                    <dd className="mt-3 text-sm text-ink-foreground/60">{s.label}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+
+            <div className="relative">
+              <div className="absolute -inset-3 rounded-sm border border-gold/25" aria-hidden="true" />
+              <img
+                src={expertiseImage}
+                alt="Framed professional certifications and credentials on a desk"
+                width={1024}
+                height={1280}
+                loading="lazy"
+                className="relative aspect-[4/5] w-full rounded-sm object-cover"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
