@@ -190,7 +190,14 @@ function Home() {
             Consultation
           </a>
         </div>
+        <nav className="flex items-center gap-6 overflow-x-auto border-t border-rule/60 px-6 py-2.5 text-xs tracking-[0.08em] whitespace-nowrap text-muted-foreground uppercase md:hidden">
+          <a href="#services">Services</a>
+          <a href="#expertise">Expertise</a>
+          <a href="#clients">Clients</a>
+          <a href="#faq">FAQ</a>
+        </nav>
       </header>
+
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-ink text-ink-foreground">
