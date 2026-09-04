@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import heroImage from "@/assets/hero-advisor.jpg";
 import coverageImage from "@/assets/us-coverage.jpg";
+import expertiseImage from "@/assets/expertise-desk.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -158,6 +159,9 @@ const faqs = [
 
 function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [slide, setSlide] = useState(0);
+  const total = testimonials.length;
+  const go = (dir: number) => setSlide((s) => (s + dir + total) % total);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -259,6 +263,21 @@ function Home() {
             <h2 className="mt-5 text-4xl leading-tight lg:text-5xl">
               We work beside your attorney, not around them.
             </h2>
+            <div className="mt-8 overflow-hidden rounded-sm border border-rule bg-ink">
+              <div className="aspect-video w-full">
+                <iframe
+                  src="https://www.youtube.com/embed/-60dAXvgwlc"
+                  title="Our Why: Financial Clarity & Confidence — Divorce Logic"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="h-full w-full"
+                />
+              </div>
+            </div>
+            <p className="mt-3 text-xs tracking-[0.08em] text-muted-foreground uppercase">
+              Our why: financial clarity &amp; confidence
+            </p>
           </div>
           <div className="space-y-6 text-base leading-relaxed text-muted-foreground">
             <p>
@@ -330,54 +349,110 @@ function Home() {
 
       {/* Expertise */}
       <section id="expertise" className="scroll-mt-20 bg-ink text-ink-foreground">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
-          <p className="eyebrow text-gold">The expertise behind every engagement</p>
-          <h2 className="mt-5 max-w-3xl text-4xl leading-tight lg:text-5xl">
-            Credentials that hold up when the numbers are challenged
-          </h2>
-          <p className="mt-6 max-w-3xl leading-relaxed text-ink-foreground/70">
-            Divorce Logic's team holds designations spanning divorce financial planning, forensic
-            accounting, wealth management, business valuation, and QDRO analysis. From
-            straightforward financial reviews to the most complex cases, we have the credentials and
-            experience to support you.
-          </p>
+        <div className="mx-auto grid max-w-7xl gap-14 px-6 py-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20 lg:px-10 lg:py-28">
+          <div>
+            <p className="eyebrow text-gold">The expertise behind every engagement</p>
+            <h2 className="mt-5 max-w-3xl text-4xl leading-tight lg:text-5xl">
+              Credentials that hold up when the numbers are challenged
+            </h2>
+            <p className="mt-6 max-w-3xl leading-relaxed text-ink-foreground/70">
+              Divorce Logic's team holds designations spanning divorce financial planning, forensic
+              accounting, wealth management, business valuation, and QDRO analysis. From
+              straightforward financial reviews to the most complex cases, we have the credentials
+              and experience to support you.
+            </p>
 
-          <ul className="mt-10 flex flex-wrap gap-3">
-            {designations.map((d) => (
-              <li
-                key={d}
-                className="rounded-sm border border-ink-foreground/20 px-4 py-2 text-sm text-ink-foreground/85"
-              >
-                {d}
-              </li>
-            ))}
-          </ul>
+            <ul className="mt-10 flex flex-wrap gap-3">
+              {designations.map((d) => (
+                <li
+                  key={d}
+                  className="rounded-sm border border-ink-foreground/20 px-4 py-2 text-sm text-ink-foreground/85"
+                >
+                  {d}
+                </li>
+              ))}
+            </ul>
 
-          <dl className="mt-16 grid gap-10 border-t border-ink-foreground/15 pt-12 sm:grid-cols-3">
-            {stats.map((s) => (
-              <div key={s.label}>
-                <dt className="font-display text-6xl text-gold-soft lg:text-7xl">{s.value}</dt>
-                <dd className="mt-3 text-sm text-ink-foreground/60">{s.label}</dd>
-              </div>
-            ))}
-          </dl>
+            <dl className="mt-14 grid gap-10 border-t border-ink-foreground/15 pt-12 sm:grid-cols-3">
+              {stats.map((s) => (
+                <div key={s.label}>
+                  <dt className="font-display text-5xl text-gold-soft lg:text-6xl">{s.value}</dt>
+                  <dd className="mt-3 text-sm text-ink-foreground/60">{s.label}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          <div className="relative self-stretch">
+            <div className="absolute -inset-3 rounded-sm border border-gold/25" aria-hidden="true" />
+            <img
+              src={expertiseImage}
+              alt="Financial statements and analysis prepared for a divorce engagement"
+              width={1024}
+              height={1280}
+              loading="lazy"
+              className="relative h-full min-h-80 w-full rounded-sm object-cover"
+            />
+          </div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section id="clients" className="scroll-mt-20 mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
-        <p className="eyebrow text-muted-foreground">Hear from our clients</p>
-        <div className="mt-12 grid gap-10 lg:grid-cols-3">
-          {testimonials.map((t) => (
-            <figure key={t.name} className="rule-top pt-8">
-              <span className="font-display text-4xl text-gold" aria-hidden="true">
-                &ldquo;
-              </span>
-              <blockquote className="mt-2 text-base leading-relaxed text-muted-foreground">
-                {t.quote}
-              </blockquote>
-              <figcaption className="mt-6 text-xs tracking-[0.16em] uppercase">{t.name}</figcaption>
-            </figure>
+      <section id="clients" className="scroll-mt-20 mx-auto max-w-5xl px-6 py-20 lg:px-10 lg:py-28">
+        <div className="flex items-end justify-between gap-6">
+          <p className="eyebrow text-muted-foreground">Hear from our clients</p>
+          <div className="flex gap-3">
+            <button
+              type="button"
+              onClick={() => go(-1)}
+              aria-label="Previous testimonial"
+              className="h-10 w-10 rounded-full border border-rule transition-colors hover:border-ink hover:bg-ink hover:text-ink-foreground"
+            >
+              &#8592;
+            </button>
+            <button
+              type="button"
+              onClick={() => go(1)}
+              aria-label="Next testimonial"
+              className="h-10 w-10 rounded-full border border-rule transition-colors hover:border-ink hover:bg-ink hover:text-ink-foreground"
+            >
+              &#8594;
+            </button>
+          </div>
+        </div>
+
+        <div className="mt-10 overflow-hidden rule-top pt-10">
+          <div
+            className="flex transition-transform duration-500 ease-out"
+            style={{ transform: `translateX(-${slide * 100}%)` }}
+          >
+            {testimonials.map((t) => (
+              <figure key={t.name} className="w-full shrink-0 px-1 text-center">
+                <span className="font-display text-5xl text-gold" aria-hidden="true">
+                  &ldquo;
+                </span>
+                <blockquote className="mx-auto mt-4 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+                  {t.quote}
+                </blockquote>
+                <figcaption className="mt-8 text-xs tracking-[0.16em] uppercase">
+                  {t.name}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-10 flex justify-center gap-2">
+          {testimonials.map((t, i) => (
+            <button
+              key={t.name}
+              type="button"
+              onClick={() => setSlide(i)}
+              aria-label={`Show testimonial ${i + 1}`}
+              className={`h-1.5 rounded-full transition-all ${
+                i === slide ? "w-8 bg-gold" : "w-3 bg-rule"
+              }`}
+            />
           ))}
         </div>
       </section>
@@ -483,11 +558,109 @@ function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-rule">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-8 text-xs text-muted-foreground lg:px-10">
-          <span className="font-display text-lg text-foreground">Divorce Logic LLC</span>
-          <span>Montvale, New Jersey · Serving NJ, NY, MA & nationwide</span>
-          <span>© {new Date().getFullYear()} Divorce Logic LLC</span>
+      <footer className="border-t border-rule bg-secondary/40">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-4 lg:px-10">
+          <div>
+            <span className="font-display text-2xl text-foreground">Divorce Logic LLC</span>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
+              Specialized divorce financial expertise — serving clients in all 50 states. Divorce
+              financial experts offering personalized guidance that bridges finance and law.
+            </p>
+          </div>
+
+          <div>
+            <p className="eyebrow text-muted-foreground">Contact</p>
+            <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
+              <li>
+                <a className="gold-underline hover:text-foreground" href="tel:+12015964005">
+                  +1 201-596-4005
+                </a>
+              </li>
+              <li>
+                <a
+                  className="gold-underline hover:text-foreground"
+                  href="mailto:info@divorcelogicllc.com"
+                >
+                  info@divorcelogicllc.com
+                </a>
+              </li>
+              <li>Montvale, New Jersey</li>
+              <li>Serving NJ, NY, MA &amp; nationwide</li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="eyebrow text-muted-foreground">Company</p>
+            <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
+              <li>
+                <a className="gold-underline hover:text-foreground" href="/">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a className="gold-underline hover:text-foreground" href="#services">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a className="gold-underline hover:text-foreground" href={CONSULT_URL}>
+                  Schedule a free consultation
+                </a>
+              </li>
+              <li>
+                <a
+                  className="gold-underline hover:text-foreground"
+                  href="https://www.divorcelogicllc.com/contact"
+                >
+                  Contact us
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="eyebrow text-muted-foreground">Legal</p>
+            <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
+              <li>
+                <a
+                  className="gold-underline hover:text-foreground"
+                  href="https://www.divorcelogicllc.com/privacy-policy"
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a
+                  className="gold-underline hover:text-foreground"
+                  href="https://www.divorcelogicllc.com/terms-of-service"
+                >
+                  Terms of Service
+                </a>
+              </li>
+              <li>
+                <a
+                  className="gold-underline hover:text-foreground"
+                  href="https://www.divorcelogicllc.com/disclaimer"
+                >
+                  Disclaimer
+                </a>
+              </li>
+              <li>
+                <a
+                  className="gold-underline hover:text-foreground"
+                  href="https://www.divorcelogicllc.com/accessibility"
+                >
+                  Accessibility
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="border-t border-rule">
+          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-6 py-6 text-xs text-muted-foreground lg:px-10">
+            <span>© {new Date().getFullYear()} Divorce Logic LLC. All rights reserved.</span>
+            <span>Montvale, New Jersey · Serving NJ, NY, MA &amp; nationwide</span>
+          </div>
         </div>
       </footer>
     </div>
